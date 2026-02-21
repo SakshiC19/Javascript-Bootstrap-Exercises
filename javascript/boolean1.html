@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function Toggle(){
+            var button =document.querySelector("button");
+            button.className =(button.className=="bi bi-sort-alpha-down") ? "bi bi-sort-alpha-up" : "bi bi-sort-alpha-down";
+        }
+    </script>
+</head>
+<body>
+    <button onclick="Toggle()" class="bi bi-sort-alpha-down"></button>
+</body>
+</html>

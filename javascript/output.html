@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript"> 
+        function DeleteClick(){
+             result = confirm("Record Deleted\nRecord deleted permanently");     // = means right side value is stored in left side value
+             if(result==true){                                                   // == means right side value is compared with the left value
+                alert(" Deleted..");
+             }
+             else
+             {
+                alert("Cancelled..");
+             }
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="DeleteClick()">Delete</button>
+</body>
+</html>

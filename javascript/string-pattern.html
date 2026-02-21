@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyPassword(){
+
+            var password = document.getElementById("txtPwd").value;
+
+            var lblMsg = document.getElementById("lblMsg");
+
+            var regExp = /(?=.*[A-Z])\w{4,10}/;
+
+            var progressBar = document.getElementById("progressBar");
+
+            if(password.length==0){
+
+                lblMsg.innerHTML = "Password Required";                
+
+            } else {
+
+                   if(password.match(regExp)){
+
+                        lblMsg.innerHTML = "Strong Password";
+                        progressBar.style.width = "100%";
+                        progressBar.className = "bg-success progress-bar progress-bar-striped progress-bar-animated";
+                    } else {
+
+                        if(password.length<4){
+                            lblMsg.innerHTML = "Poor Password";
+                            progressBar.style.width = "30%";
+                            progressBar.className = "bg-danger progress-bar progress-bar-striped progress-bar-animated";
+
+                        } else{
+
+                            lblMsg.innerHTML = "Weak Password";
+                            progressBar.className = "bg-warning progress-bar progress-bar-striped progress-bar-animated";
+                            progressBar.style.width = "70%";
+                        }
+                    }
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl class="w-25">
+        <dt>Password</dt>
+        <dd>
+            <input type="password" id="txtPwd" onkeyup="VerifyPassword()" class="form-control">
+        </dd>
+        <dd>
+            <div class="progress">
+                <div class="progress-bar" id="progressBar">
+                    <label id="lblMsg" class="text-light"></label>
+                </div>
+            </div>
+        </dd>   
+    </dl>
+</body>
+</html>

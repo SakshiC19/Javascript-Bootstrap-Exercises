@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <style>
+        .bi-search{
+            font-size:14px;
+            display:inline-block;
+            position:absolute;
+            right:320px;
+        }
+        .search-bar{
+            width:250px;
+        }
+        .search-bar::placeholder{
+            text-align:right;
+        }
+        .footer-link{
+            display:block;
+            text-decoration: none;
+            color: rgb(44, 43, 43);
+        }
+        .footer-link:hover{
+            color:red;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <header class="d-flex justify-content-between p-2 bg-light mt-2 fs-3 ">
+        <div class="d-flex ms-4">
+            <span class="bi bi-headphones text-danger"></span>
+            <span class="mx-2 fw-bold ">ShopModern</span>
+            <nav class="ms-5">
+                <span class="ms-5 h5">Home</span>
+                <span class="mx-3 h5">Categories</span>
+                <span class="h5">Deals</span>
+                <span class="mx-3 h5">Support</span>
+            </nav>
+        </div>
+        <div class="d-flex fs-4 justify-content-center align-items-center me-3">
+            <span class="bi bi-search"></span>
+            <input type="text" class=" search-bar form-control" placeholder="Search Shopping.com">
+            <button class="bi bi-cart4 btn position-relative"><span class="position-absolute bg-danger text-white rounded rounded-circle badge">3</span></button>
+            <button class="bi bi-person btn"></button>
+        </div>
+    </header>
+    <section class="ms-5">
+        <div class="mt-4 ms-5">
+            <ul style="--bs-breadcrumb-divider:' > '" class="breadcrumb">
+                <li class="breadcrumb-item ms-3">Home</li>
+                <li class="breadcrumb-item">Shop</li>
+                <li class="breadcrumb-item">Headsets</li>
+                <li class="breadcrumb-item">Premium Wireless Headset</li>
+            </ul>
+        </div>
+        <div class="mt-5 row ms-5">
+            <div class="col-5">
+                <img src="../public/images/headphone.png" class=" w-100 img-thumbnail img-fluid mb-3" height="700">
+
+                <div class="d-flex w-25 gap-2">
+                    <img src="../public/images/image1.png" class="img-thumbnail ">
+                    <img src="../public/images/image-2.png" class="img-thumbnail ">
+                    <img src="../public/images/image-3.png" class="img-thumbnail ">
+                    <img src="../public/images/image-4.png" class="img-thumbnail d-flex">
+                </div>
+                        
+            </div>
+            <div class="col ms-5">
+                <div class="bg-danger text-white p-2 mt-2 rounded-5 text-center w-25">
+                    NEW ARRIVAL
+                </div>
+                <div class="h1 mt-2">
+                    Premium Wireless Headset
+                </div>
+                <div>
+                    <span class="bi bi-star-fill text-danger"></span>
+                    <span class="bi bi-star-fill text-danger"></span>
+                    <span class="bi bi-star-fill text-danger"></span>
+                    <span class="bi bi-star-half text-danger"></span>
+                    <span class="h6 p-2"> 4.5</span>
+                    <span class="mx-2 text-decoration-underline"> 128 Reviews</span>
+                </div>
+                <div class="mt-3 fw-bold fs-3">$129.00</div>
+                <div class="mt-3">
+                    <p>Experience audio like never before. Our Premium Wireless Headset combines <br>
+                    studio-quality sound with cutting-edge technology for the ultimate listening <br>
+                    experience.</p>
+                </div>
+                <div class="mt-4 fw-normal pb-3">
+                    <span class="bi-ear-fill"> Advanced Active Noise Cancelling (ANC) technology<br></span>
+                    <span class="bi bi-battery-charging"> Massive 40-hour battery life with fast charge<br></span>
+                    <span class="bi bi-bricks"> Ergonomic design with memory foam cushions<br></span>
+                </div>
+                <div>
+                    <div class="border-bottom  border-2 border-light mt-4 "></div>
+                    <div class="mt-4 h6"> Color <span> : Midnight Black</span></div>
+                    <div>
+                        <span class="bi bi-circle-fill fs-1 text-black me-1"></span>
+                        <span class="bi bi-circle-fill fs-1 text-secondary p-1"></span>
+                        <span class="bi bi-circle-fill fs-1 text-primary p-1"></span>
+                    </div>
+                </div>
+                <div class="mt-2 h6"> QUANTITY</div>
+                <button class="btn btn-lite  border-black px-4 mt-1">
+                    <span class="h4">−&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;+</span>
+                </button>
+                <div class="d-flex">
+                    <button class="btn btn-danger w-25 mt-4 bi bi-cart4"><span> Add to Cart </span></button>
+                    <button class="btn btn-dark w-25 mt-4 ms-3"><span>Buy Now</span></button>
+                </div>
+                <div class="mt-4 ">
+                    <span class="bi bi-truck p-2 me-2 fw-lighter">  Free Shipping</span>
+                    <span class="bi bi-shield-check ps-2 fw-lighter">  2 Year Warranty</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="container py-5">
+            <ul class="nav mb-2">
+                <li class="nav-item">
+                    <a  class="nav-link  text-danger active h3" href="#">Description</a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link text-dark h3" href="#">Specifications</a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link text-dark h3" href="#">Shipping & Returns</a>
+                </li>
+            </ul>
+            <div class="border-bottom  border-2 border-light m-0"></div>
+            
+            <!-- content -->
+            <div class="container mt-4 d-flex">
+                <!-- Left Column -->
+                <div> 
+                    <h4 class="fw-bold mb-3 ">Unparalleled Sound Clarity</h4>
+            
+                    <p class="mt-4">Engineered with 40mm high-fidelity drivers, the ShopModern Premium <br>
+                    Headset delivers balanced sound with deep bass and crisp highs. The hybrid<br>
+                    active noise cancellation blocks out ambient noise, allowing you to focus on <br>
+                    your music, podcasts, or calls.</p> 
+                   <p class="mt-4">The lightweight design and premium protein leather ear pads provide comfort<br>
+                    for hours of use, while the sleek silhouette ensures you look as good as you<br>
+                    sound.</p>
+                </div>
+
+                <!-- Right Column -->
+                <div class="p-5 rounded-4 bg-light ms-5 w-50">
+                    <h5 class="fw-bold text-start fw-bold">Inside the Box</h5>
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-3 d-flex align-items-center">
+                          <i class="bi bi-check-circle-fill text-danger me-2"></i>
+                          Premium Wireless Headset
+                        </li>
+                      
+                        <li class="mb-3 d-flex align-items-center">
+                          <i class="bi bi-check-circle-fill text-danger me-2"></i>
+                          Hard-shell Carrying Case
+                        </li>
+                      
+                        <li class="d-flex align-items-center">
+                          <i class="bi bi-check-circle-fill text-danger me-2"></i>
+                          USB-C Charging Cable
+                        </li>
+                      </ul>
+                      
+                </div>            
+            </div>         
+        </div>            
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top pt-5">
+        <div class="container">
+            <div class="row mb-4 ms-4">
+
+                <div class="col-md-3 mb-4">
+                    <h4 class="fw-bold">
+                        <i class="bi bi-headphones text-danger me-1"></i> SHOPMODERN
+                    </h4>
+                    <div>
+                        <p class="pt-3">Defining the future of audio tech with<br>
+                        premium materials and unparalleled<br>
+                        sound quality.</p>
+                    </div>
+                </div>
+
+                <div  class="col-md-3 mb-4 ">
+                    <h6>SUPPORT</h6>
+                    <a href="#" class="footer-link pt-3">Track Order</a>
+                    <a href="#" class="footer-link pt-1">Returns Policy</a>
+                    <a href="#" class="footer-link pt-1">Help Center</a>
+                    <a href="#" class="footer-link pt-1">Contact Us</a>
+                </div>
+
+
+                <div  class="col-md-3 mb-4 ">
+                    <h6>COMPANY</h6>
+                    <a href="#" class="footer-link pt-3">About Us</a>
+                    <a href="#" class="footer-link pt-1">Careers</a>
+                    <a href="#" class="footer-link pt-1">Blog</a>
+                    <a href="#" class="footer-link pt-1">Affiliates</a>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h6>SUBSCRIBE</h6>
+                    <ul class="list-unstyled">
+                        <li class="pt-3">Get the latest on sales and new drops.</li>
+                    </ul>
+                    <div class="d-flex">
+                        <input type="email" class="form-control border rounded-2 " placeholder="Email Address">
+                        <button class="bi bi-send bg-danger ms-3 border rounded-3 w-25 text-white"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white border-top pt-5 m-0"></div>
+        </div>
+
+        <!-- Bottom Footer -->
+
+        <div class="ms-5 ps-5  pb-5 d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <p class="footer-text mb-2 mb-md-0 ms-5">
+              © 2026 ShopModern Inc. All rights reserved.
+            </p>
+          <div>
+              <p class=" d-inline me-5">Privacy Policy</p>
+              <p class=" d-inline me-5 pe-5">Terms of Service</p>
+            </div>
+          </div>
+      
+        </div>
+        
+    </footer>
+
+</body>
+</html>

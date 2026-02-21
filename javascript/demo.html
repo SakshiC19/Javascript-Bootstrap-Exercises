@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/Javascript">
+        "use strict";
+        function bodyload(){
+            window.document.images[0].src="../public/images/headphone.jpg";
+            window.document.forms[0].elements[2].value="Register";       //at element[0] it is name , element[1] it is email hence element[2] it is button
+            window.document.forms[1].elements[1].value="Login";
+        }
+
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <img width="100" height="100" border="1">
+    </div>
+    <div>
+        <form>                                                                        <!-- form[0] -->
+            <h2>Register</h2>                                       
+            <dl>
+                <dt>Name</dt>                                                        <!-- element[0] -->
+                <dd><input type="text"></dd>
+                <dt>Email</dt>                                                       <!-- element[1] -->
+                <dd><input type="email"></dd>
+            </dl>
+            <input type="button">                                                    <!-- element[2] -->
+        </form>
+        <div>
+            <form>                                                                   <!-- form[1] -->
+                <h2>Login</h2>                                                       
+            <input type="text" placeholder="Your email"> <input type="button">       <!-- element[1] -->
+            </form>   
+        </div>
+            
+        
+    </div>
+</body>
+</html>
