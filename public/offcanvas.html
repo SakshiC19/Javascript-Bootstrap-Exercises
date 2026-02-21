@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="p-2">
+    <nav class="d-flex justify-content-between align-items-center">
+        <div>
+            <button  data-bs-toggle="offcanvas" data-bs-target="#menu" class="btn bi bi-justify"></button>
+            <div class="offcanvas offcanvas-start" id="menu">              <!-- off-canvas-start means comes from left and off-canvas-end means comes from right -->
+                <div class="offcanvas-header">
+                    <h3>Amazon Shopping</h3>
+                    <button class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success"> Home</li>
+                        <li class="list-group-item my-2 list-group-item-success"> Shop</li>
+                        <li class="list-group-item list-group-item-success"> Offers</li>
+                        <li class="list-group-item  my-2 list-group-item-success"> About</li>
+                    </ul>
+                </div>
+
+            </div>
+            <span class="bi bi-amazon"> Amazon</span>
+        </div>
+        <div>
+            <span class="bi bi-person"></span>
+            <button class="btn bi bi-cart4" data-bs-toggle="offcanvas" data-bs-target="#cart"></button>
+            <div class="offcanvas offcanvas-end" id="cart">
+                <div class="offcanvas-header">
+                    <h2>Cart Items</h2>
+                    <button class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="p-4">
+    <div class="row">
+        <nav class="col-2">
+            <h2>Dropdown</h2>
+            
+            <div class="dropend" data-bs-theme="dark">
+                <button  data-bs-toggle="dropdown" class="btn btn-dark bi bi-person dropdown-toggle"> Login</button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a><span class="dropdown-item-text"><span class="bi bi-person-circle"></span> Profile</span></a></li>
+                    <li class="dropdown-item"><a class="text-decoration-none" href="./alert.html" target="frame-body"><span class="dropdown-item-text"> <span class="bi bi-gift"></span> Offers</span></a></li>
+                    <li class="dropdown-item"><a><span class="dropdown-item-text"> <span class="bi bi-person-circle"></span> Wishlist</span></a></li>
+                    <li class="dropdown-item"> <a><span class="dropdown-item-text"> <span class="bi bi-cart4"></span> Cart</span></a></li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item"> <a><span class="dropdown-item-text"> <span class="bi bi-question-circle"></span> Help</span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <main class="col-10">
+            <iframe width="100%" height="600" style="border:none;" name="frame-body"></iframe>
+        </main>
+    </div>
+</body>
+</html>
