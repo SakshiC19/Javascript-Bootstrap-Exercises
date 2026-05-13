@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SubmitClick(){
+            var para =document.querySelector("p");
+            para.innerHTML="";
+            var checkboxes=document.getElementsByName("Course");
+            for(var checkbox of checkboxes){                             //var of is for values
+                if(checkbox.checked){
+                    para.innerHTML +=checkbox.value + "<br>";
+                }
+            }
+    }
+    </script>
+</head>
+<body>
+    <ul>
+        <li><input onchange="SubmitClick()" name="Course" value="Java" type=checkbox><label>Java</label></li>
+        <li><input onchange="SubmitClick()" name="Course" value="JavaScript" type=checkbox><label>JavaScript</label></li>
+        <li><input onchange="SubmitClick()" name="Course" value="Oracle" type=checkbox><label>Oracle</label></li>
+        <li><input onchange="SubmitClick()" name="Course" value="MySQL" type=checkbox><label>MySQL</label></li>
+    </ul>
+    <button onclick="SubmitClick()">Submit</button>
+    <p></p>
+</body>
+</html>

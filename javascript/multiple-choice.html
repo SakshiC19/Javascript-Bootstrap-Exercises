@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var userdetails = { Email:'john@gmail.com', Mobile: '+919876543211', Password:'john11' };
+        function LoginClick(){
+            var userid= document.getElementById("txtId").value;
+            if(userid===userdetails.Email){
+                document.write(`Your email ${userid} verified..`);
+            } else if(userid===userdetails.Mobile){
+                document.write(`OTP Sent to your mobile ${userid}`);
+            } else {
+                alert(`${userid} doesn't exist`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>User Login</h3>
+    <dl>
+        <dt>Email or mobile number</dt>
+        <dd><input type="text" id="txtId"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="txtPwd"></dd>
+    </dl>
+    <button onclick="LoginClick()">Login</button>
+</body>
+</html>

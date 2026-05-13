@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var ms=0;
+        var sec=0;
+        var min=0;
+        var hrs=0;
+        function StartWatch(){
+            ms++;                              //increment milliseconds by 1
+            if(ms===999){
+                sec++;
+                ms=0;
+                if(sec===59){
+                    min++;
+                    sec=0;
+                    if(min===59){
+                        hrs++;
+                        min=0;
+                    }
+                }
+            }
+            document.getElementById("lblMs").innerHTML=ms;
+            document.getElementById("lblSec").innerHTML=sec;
+            document.getElementById("lblMin").innerHTML=min;
+            document.getElementById("lblHrs").innerHTML=hrs;
+        }
+        var thread;
+        function StartClick(){
+            thread=setInterval(StartWatch,1);
+        }
+        function StopClick(){
+            thread=clearInterval(thread);
+        }
+    </script>
+</head>
+<body onload="bodyload()" class="container-fluid d-flex justify-content-center">
+    <div>
+        <div class="row p-4 bg-primary text-white mt-4" style="width: 400px;">
+            <div class="col" style="width: 50px;">
+                <span id="lblHrs">00</span>
+            </div>
+            <div class="col" style="width: 50px;">
+                :
+            </div>
+            <div class="col" style="width: 50px;">
+                <span id="lblMin">00</span>
+            </div>
+            <div class="col" style="width: 50px;">
+                :
+            </div>
+            <div class="col" style="width: 50px;">
+                <span id="lblSec">00</span>
+            </div>
+            <div class="col" style="width: 50px;">
+                :
+            </div>
+            <div class="col" style="width: 50px;">
+                <span id="lblMs">000</span>
+            </div>
+        </div>
+        <div class="mt-3">
+            <button onclick="StartClick()" class="btn  btn-sm btn-primary">Start</button>
+            <button onclick="StopClick()" class="btn btn-sm btn-light">Stop</button>
+        </div>
+    </div>      
+</body>
+</html>

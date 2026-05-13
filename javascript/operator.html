@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var position=1;
+        function MoveRight(){
+            position*=2;                 //position= position * 2
+            document.querySelector("img").style.marginLeft = `${position}px`;
+        }
+        function MoveLeft(){
+            position/=2;                     
+            document.querySelector("img").style.marginLeft = `${position}px`;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="MoveRight()"> < </button>
+    <button onclick="MoveLeft()"> > </button>
+    <br><br>
+    <img src="../public/images/java.jpg" width="100" height="100">  
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        function Player(obj, e){
+
+            switch(obj.value){
+
+                 case "play": 
+
+                  document.querySelector("p").innerHTML = "Playing..";
+
+                  break;
+
+                case "pause": 
+
+                  document.querySelector("p").innerHTML = "Paused";
+
+                  break;
+
+                case "stop": 
+
+                  document.querySelector("p").innerHTML = "Stopped..";
+
+                  break;
+
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <button onclick="Player(this, event)" value="play">Play</button>
+
+    <button onclick="Player(this, event)" value="pause">Pause</button>
+
+    <button onclick="Player(this, event)" value="stop">Stop</button>
+
+    <p></p>
+
+</body>
+
+</html>

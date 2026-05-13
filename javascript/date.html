@@ -1,0 +1,8 @@
+<script>
+    var departure = new Date();
+    //const is used because once we initialised it should not change the value
+
+    const weekdays =['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']; 
+    const months=['January','February','March']                                            
+    document.write(`${weekdays[departure.getDay()]}, ${departure.getDate()} ${months[departure.getMonth()]} ${departure.getFullYear()}`)
+</script>

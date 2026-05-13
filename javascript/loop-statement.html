@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var data =[
+            {Category:"Electronics" ,Products: ["TV","Mobile"]},         //nested array (category object in that array products)
+            {Category:"Fashion",Products:["Jeans","Shirt","Shoes"]}
+        ]
+        function bodyload(){
+            data.map(function(item){
+                var li=document.createElement("li");
+                li.innerHTML=item.Category;
+                var ul= document.createElement("ul");
+                item.Products.map(function(product){
+                    var ul_li=document.createElement("li");
+                    ul_li.innerHTML=product;
+                    ul.appendChild(ul_li);
+                    li.appendChild(ul);
+                    document.querySelector("ol").appendChild(li);
+                })
+            })
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <ol>
+
+    </ol>
+</body>
+</html>

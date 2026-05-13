@@ -1,0 +1,11 @@
+<script>
+    var values =['Home' ,'Shop' ,'Offers','Contact'];
+    document.write(values.toString()+ "<br>");
+    document.write(values.join('/') + "<br>");
+    values.forEach(function(value,index){
+        document.write(`<li>[${index}]: ${value}</li>`)
+    })
+    values.map(function(value,index){
+        document.write(`<button> [${index}] ${value} </button> <br>`);
+    })
+</script>

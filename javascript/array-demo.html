@@ -1,0 +1,73 @@
+<!-- Dynamically Adding Element into Page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+            var menuItems=['Home','Electronics','Fashion','Offers','Contact'];
+            function bodyload(){
+
+                menuItems.push('Services');
+                menuItems.map(function(item){
+                    var li = document.createElement("li");
+                    li.textContent=item;
+                    document.querySelector("ol").appendChild(li);
+
+                    var option=document.createElement("option");
+                    option.text=item;
+                    option.value=item;
+                    document.querySelector("select").appendChild(option);
+
+                    var anchor=document.createElement("a");
+                    anchor.textContent =item;
+                    anchor.href=`${item}.html`;
+                    anchor.style.marginRight="30px";
+                    document.querySelector("nav").appendChild(anchor);
+
+
+                    var ul_li = document.createElement("li");
+                    ul_li.innerHTML= `<input type="checkbox" value=${item}> <label> ${item} </label>`;
+                    document.querySelector("ul").appendChild(ul_li);
+
+                    var tr =document.createElement("tr");
+                    var td =document.createElement("td");
+                    td.innerHTML=`${item} <button class="btn btn-warning bi bi-pen mx-2"></button>  <button class="btn btn-danger bi bi-trash mx-2"></button>`;
+                    tr.appendChild(td);
+                    document.querySelector("tbody").appendChild(tr);
+
+                })
+            }
+    </script>
+</head>
+<body onload="bodyload()" class="container-fluid p-4">
+    <header style="border:1px solid black; padding:20px";>
+        <nav>
+
+        </nav>
+    </header>
+    <ol>
+
+    </ol>
+    <select>
+
+    </select>
+    <ul style="list-style:none;">
+
+    </ul>
+    <table class="table table-hover w-25">
+        <thead>
+            <tr>
+                <th>Menu Items</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>

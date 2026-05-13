@@ -1,0 +1,23 @@
+<script>
+    function Factorial(n){
+        if(n===1){
+            return 1;
+        }else{
+            return n* Factorial(n-1);
+        }
+    }
+    document.write( `Factorial of 5 is ${Factorial(5)}`);
+</script>
+
+<!-- <script>
+    function printTable(num, i = 1) {
+        if (i > 10) {
+            return;
+        } else {
+            document.write(`${num} x ${i} = ${num * i} <br>`);
+            printTable(num, i + 1);
+        }
+    }
+
+    printTable(6);
+</script> -->

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function bodyload(){
+            var product = {title:'', price:0, image:'', rating:{ratings:0, reviews:0, rate:0}, features:[]};
+           
+            fetch('../data/product.json')
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                product=data;
+                document.getElementById("imgProduct").src = product.image;
+                document.getElementById("lblTitle").textContent = product.title;
+                document.getElementById("lblRatings").innerHTML = `<span class="badge bg-success text-white rounded">${product.rating.rate} <span class="bi bi-star-fill"></span> </span> <span class="fw-bold text-secondary mx-2"> ${product.rating.ratings.toLocaleString('en-in')} ratings & ${product.rating.reviews.toLocaleString('en-in')} reviews </span>`;
+                document.getElementById("lblPrice").innerHTML = `${product.price.toLocaleString('en-in',{style:"currency", currency:'INR', minimumFractionDigits:0, maximumFractionDigits:0})}`;
+
+                    product.features.map(function(feature) {
+                        var li = document.createElement("li");
+                        li.innerHTML = `<span class="text-secondary"> ${feature} </span>`;
+                        li.className = "bi bi-tag-fill my-2 text-success"; 
+                        document.getElementById("lstFeatures").appendChild(li);
+                    })
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+        }    
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="row mt-4">
+        <div class="col-3">
+            <img id="imgProduct" width="100%">
+        </div>
+        <div class="col-9">
+            <div class="fs-5 fw-bold" id="lblTitle"></div>
+            <div id="lblRatings" class="mt-2">
+
+            </div>
+            <div id="lblPrice" class="fw-bold mt-2 fs-2"></div>
+            <div class="mt-2">
+                <ul class="list-unstyled" id="lstFeatures" style="font-size: 14px">
+
+                </ul>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>

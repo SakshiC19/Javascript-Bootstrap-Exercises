@@ -1,0 +1,24 @@
+<script>
+    let username =prompt("Enter your name");
+    let role=prompt("Enter your role","admin|customer");
+    let productname=prompt("Enter Product Name");
+
+    class Product{
+        _productName;
+        get ProductName(){
+            return this._productName;
+        }
+        set ProductName(newName){
+            if(role ==="admin"){
+                this._productName=newName;
+            }else{
+                document.write(`Hello ! ${username} you are not allowed to set product name`);
+            }
+        }
+    }
+    let obj =new Product();
+    obj.ProductName=productname;
+    if(obj.ProductName){
+        document.write(`Product Name =${obj.ProductName}`);
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function LoadClick(){
+            var http = new XMLHttpRequest();
+            http.open("get","../data/notes.txt",true);
+            http.send();
+            http.onreadystatechange = function(){
+                if(http.readyState===4){
+                    document.querySelector("pre").innerHTML=http.responseText;
+                }
+            }
+        }   
+        function LoadHTML(){
+            var http = new XMLHttpRequest();
+            http.open('get', './bookmyshow.html', true);
+            http.send();
+            http.onreadystatechange = function(){
+                if(http.readyState===4){
+                    document.querySelector("div").innerHTML = http.responseText;
+                }
+            }
+        }    
+    </script>
+</head>
+<body class="container">
+    <h1>AJAX Demo</h1>
+    <button onclick="LoadClick()">Load Ajax Help</button>
+    <button onclick="LoadHTML()">Book My Show</button>
+    <br>
+    <pre></pre>
+    <div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!-- Task: Create a pin verification screen where user can enter max 3 times wrong 
+
+pin, after the third attempt it must block. 
+
+
+
+  Pin : [       ] [submit]          => actual pin 2233
+
+            2345 => wrong pin 2 attempts left
+
+            4520 => wrong pin 1 attempt left
+
+            3400 => wrong pin - card blocked [disable pin textbox]
+
+            after 1 min enable textbox.
+
+            show timer for 1 min -->
+
+
+
+            <!doctype html>
+            <html lang="en">
+              <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Js password attempts limiting</title>
+                <!--19-02-2026-->
+                <link
+                  rel="stylesheet"
+                  href="../node_modules/bootstrap/dist/css/bootstrap.css"
+                />
+                <link
+                  rel="stylesheet"
+                  href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+                />
+                <script type="text/javascript">
+                  var userCredentials = { Accno: "12345", Password: "7661" };
+                  var attempts = 3;
+                  var prev = "";
+                  function VerifyPwd() {
+                    var pwd = document.getElementById("pwd").value.trim();
+                    console.log(`pwd = ${pwd}   pev= ${prev}`);
+                    if (pwd !== "" && prev !== pwd) {
+                      prev = pwd;
+                      if (pwd === userCredentials.Password) {
+                        document.getElementById("loginbtn").removeAttribute("disabled");
+                        document.getElementById("lblPwd").innerHTML = "";
+                        attempts = 3;
+                      } else {
+                        document.getElementById("loginbtn").disabled = true;
+                        document.getElementById("loginbtn").style.focuse = "none";
+                        attempts--;
+                        bodyLoad();
+                        if (attempts === 0) {
+                          document.getElementById("pwd").disabled = "true";
+                          startTimer();
+                        } else {
+                          document.getElementById("lblPwd").innerHTML =
+                            `<span class='bi bi-x-circle text-danger fw-bold'>Invalid Pin.</span>`;
+                        }
+                      }
+                    }
+                  }
+                  var date = new Date();
+                  var timerReference;
+            
+                  function startTimer() {
+                    date.setSeconds(10);
+                    timerReference = setInterval(runTimer, 1000);
+                  }
+                  function runTimer() {
+                    var pwd = document.getElementById("pwd");
+                    date.setSeconds(date.getSeconds() - 1);
+                    if (date.getSeconds() === 0) {
+                      attempts = 3;
+                      pwd.removeAttribute("disabled");
+                      document.getElementById("lblPwd").innerHTML = "";
+                      pwd.value = "";
+                      bodyLoad();
+                      clearInterval(timerReference);
+                      pev = "";
+                    } else {
+                      document.getElementById("lblPwd").innerHTML =
+                        `Pin blocked try again after <span class='text-danger fw-bold'>${date.getSeconds()} Seconds.</span>`;
+                    }
+                  }
+            
+                  function bodyLoad() {
+                    document.getElementById("attempts").innerHTML =
+                      `<span class='fw-bold'>Total attempts left : ${attempts}.</span>`;
+                  }
+                  function LoginClick() {
+                    document.querySelector("body").innerHTML =
+                      `<h2 class='bi bi-success text-center'>Login Successful</h2>`;
+                  }
+                  function VerifyAccno() {
+                    var uname = document.getElementById("uname").value.trim();
+                    if (uname !== "") {
+                      if (uname === userCredentials.Accno) {
+                        document.getElementById("pinContainer").style.display = "block";
+                        document.querySelector("p").innerHTML = "";
+                      } else {
+                        document.getElementById("pinContainer").style.display = "none";
+                        document.querySelector("p").innerHTML =
+                          `<span class='text-danger'>Invalid Account Number.</span>`;
+                      }
+                    }
+                  }
+                </script>
+              </head>
+            
+              <body class="container-fluid p-3" onload="bodyLoad()">
+                <div class="w-25 p-2 m-3">
+                  <h4 class="bi bi-bank2">Login to your account</h4>
+                  <dl>
+                    <dt>AccountNumber</dt>
+                    <dd>
+                      <input
+                        type="text"
+                        id="uname"
+                        name="uname"
+                        class="form-control"
+                        placeholder="Enter your Account number"
+                        onblur="VerifyAccno()"
+                      />
+                    </dd>
+                    <div id="pinContainer" style="display: none">
+                      <dt>Pin</dt>
+                      <dd>
+                        <input
+                          type="password"
+                          id="pwd"
+                          onblur="VerifyPwd()"
+                          name="pwd"
+                          class="form-control"
+                          placeholder="Emter your pin "
+                        />
+                      </dd>
+                      <label for="pwd" id="lblPwd"></label>
+                      <button
+                        onclick="LoginClick()"
+                        class="btn btn-primary w-100"
+                        id="loginbtn"
+                        disabled
+                      >
+                        Login
+                      </button>
+                      <label id="attempts"></label>
+                    </div>
+                  </dl>
+                  <p></p>
+                </div>
+              </body>
+            </html>

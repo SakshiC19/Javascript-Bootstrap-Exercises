@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">  
+    <script>
+        function Clock(){
+            var now = new Date();
+            var time = now.toLocaleTimeString();
+            document.querySelector("p").innerHTML=time;
+        }
+        function bodyload(){
+            setInterval(Clock,1000);                       //every 1 sec it will execute the function until it removed from the memory
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <p align="center"></p>
+</body>
+</html>    

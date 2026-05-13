@@ -1,0 +1,29 @@
+<script>
+    class Product
+    {
+         Rating = {
+            Hyderabad: {
+                Vendor: {
+                    Rate: 3.5
+                }
+            },
+            Delhi: {
+                Vendor: {
+                    Rate: 4.2
+                }
+            }
+         }         
+         get HydVendorRating(){
+            return this.Rating.Hyderabad.Vendor.Rate;
+         }
+
+         // Remove setter to make it read-only
+
+         set HydVendorRating(newRate){
+            this.Rating.Hyderabad.Vendor.Rate = newRate;
+         }
+    }
+    let obj = new Product();
+    obj.HydVendorRating = prompt("Enter New Rating for Hyd Vendor");
+    document.write(`Hyd Vendor Rating : ${obj.HydVendorRating}`);
+</script>
